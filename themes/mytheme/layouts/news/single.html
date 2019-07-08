@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<style>
+  ul li {
+    text-decoration: none;
+    display: inline;
+  }
+  img {
+    width: 40%
+  }
+
+  .info-article {
+    display: flex;
+    align-items: flex-start
+  }
+
+  .news-text {
+    padding-left: 200px;
+    margin-left: 200px;
+  }
+
+</style>
+
+<h1>{{ .Params.title }}</h1>
+<h4>{{ .Params.subtitle }}</h4>
+
+<div class="info-article">
+  <p>By {{ .Params.author }}, {{ .PublishDate.Format "2 January 2006" }} </p> <br>
+  <p>{{ partial "tags.html" .}}</p>
+</div>
+
+
+  <img src="{{ .Params.img }}" class="rounded float-left" alt=""> 
+
+
+<div class="news-text">
+  <p>{{.Content}}</p>
+</div>
+
+</div>
+{{ end }}

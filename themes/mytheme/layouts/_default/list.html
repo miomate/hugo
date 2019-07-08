@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<style>
+  
+  img {
+    width: 250px;
+    height: 135px;
+  }
+  p {
+    font-size: 19px;
+    font-weight: 600;
+  }
+  a a:hover, a:visited, a:link, a:active {
+    all: unset;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .overview-games-container {
+    display: flex;
+  }
+  .overview-game-image {
+    margin-top: 10px
+  }
+  .overview-game-info {
+    margin-left: 30px;
+  }
+
+</style>
+
+<h1 class="text-center"> 
+  Overview of all
+  {{ .Type | humanize }}
+  {{ .Content}}
+</h1>
+{{ range .Pages }}
+
+<div class="overview-games-container">
+
+  <div class="overview-game-image">
+    <a href="{{ .URL | relURL }}"><img src="{{ .Params.img }}" ></a>
+  </div>
+
+  <div class="overview-game-info">
+      <a href="{{ .URL | relURL }}">
+    <h3>{{ .Title}}</h3>
+    <time  datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2 Jan 2006" }}</time>
+    <p>{{ .Params.excerpt }}</p>    </a>
+  </div>
+
+</div> <!--overview-games-container-->
+
+
+{{ end }}
+{{ end }}
+

@@ -1,0 +1,27 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "mytheme" 
+tags = ["tags"]
+
+
+[menu]
+  [[menu.main]]
+    identifier = "Games"
+    name = "Games"
+    url = "/Games/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "News"
+    name = "News"
+    url = "/news/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "About"
+    name = "About"
+    url = "/About/"
+    weight = 3 #without About will be first, because of alphabetical order
+
+    

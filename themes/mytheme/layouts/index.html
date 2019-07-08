@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<style>
+  .jumbotron {
+    margin: 0px;
+    height: 1000px;
+  }
+</style>
+
+<div class="jumbotron" >
+  
+    <h1 class="display-4">Landing page</h1>
+    <p class="lead">Made by HUGO</p>
+    
+    <h3>Latest game test:</h3>
+    {{- partial "latest-item.html" . -}}
+    <h3>Latest game test:</h3>
+
+  
+</div>
+{{ end }}

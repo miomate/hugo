@@ -1,0 +1,2 @@
+* “index.md 60” is a regular page which can contain other pages, images etc. as resources Basically all files in the same folder and below will be part of a bundle.
+* “_index.md” is the content page for the list type of pages, i.e. pages that has children – home page, section page, taxonomy lists and taxonomy terms. These can contain resources in the form of images, JSON files etc., but not other pages. And the bundle is restricted to the same folder level.

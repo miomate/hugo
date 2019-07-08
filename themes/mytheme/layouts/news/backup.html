@@ -1,0 +1,77 @@
+{{ define "main" }}
+<style>
+  #img1 {
+    width: 20%;
+    border: 5px solid white;
+    outline: 1px solid grey;
+    display: flex
+
+  }
+
+  .div1 {
+    margin-top: -150px;
+    display: block;;
+    display: flex;
+  }
+
+  .div2 {
+    max-width: 1000px;
+    float: left;
+    background-clip: grey;
+  }
+  
+  .div3 {
+    color: red;
+  }
+ 
+  .div4 {
+    color: black;
+  }
+
+  h1 {
+    color: black;
+    font-size: 40pt;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0 0 5px black;
+  }
+
+  ul {
+    text-decoration: none;
+    float: right;
+  }
+
+  ul li {
+    display: inline;
+  }
+
+  .div3 ul li a {
+    color: white;
+    background-color: rgba(90, 90, 90, 0.425)
+  }
+    
+
+</style>
+
+<img src="{{ .Params.img }}"  class="img-fluid" alt=""> <!-- big img-->
+
+<div class="div1">
+  <img src="{{ .Params.cover }}" alt="" id="img1"> 
+
+  <div class="div2">
+    <h1>{{ .Params.title }}</h1>
+    <p style="color: red; font-size: 30px;">{{ .Params.score }}</p> 
+
+    <div class="div3">
+      {{ partial "tags.html" .}}
+    </div>
+  </div>
+</div>
+<div class="div4">  {{ .Content }}</div>
+
+
+ 
+
+
+{{ end }}
+
